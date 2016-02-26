@@ -30,14 +30,15 @@ from json2labelImg import json2labelImg
 # The main method
 def main():
     # Where to look for Cityscapes
-    if 'CITYSCAPES_DATASET' in os.environ:
-        cityscapesPath = os.environ['CITYSCAPES_DATASET']
-    else:
-        cityscapesPath = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','..')
-    # how to search for all ground truth
-    searchFine   = os.path.join( cityscapesPath , "gtFine"   , "*" , "*" , "*_gt*_polygons.json" )
-    searchCoarse = os.path.join( cityscapesPath , "gtCoarse" , "*" , "*" , "*_gt*_polygons.json" )
+    # if 'CITYSCAPES_DATASET' in os.environ:
+    #     cityscapesPath = os.environ['CITYSCAPES_DATASET']
+    # else:
+    #     cityscapesPath = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','..')
+    cityscapesPath = os.path.expanduser('~/exp/datasets/cityscapes/gtFine_trainvaltest')
 
+    # how to search for all ground truth
+    searchFine = os.path.join(cityscapesPath, "gtFine", "*" , "*" , "*_gt*_polygons.json" )
+    searchCoarse = os.path.join(cityscapesPath, "gtCoarse", "*" , "*" , "*_gt*_polygons.json" )
     # search files
     filesFine = glob.glob( searchFine )
     filesFine.sort()
@@ -50,7 +51,7 @@ def main():
 
     # quit if we did not find anything
     if not files:
-        printError( "Did not find any files. Please consult the README." )
+        printError("Did not find any files. Please consult the README." )
 
     # a bit verbose
     print "Processing {} annotation files".format(len(files))
