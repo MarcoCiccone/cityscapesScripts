@@ -60,13 +60,13 @@ Label = namedtuple( 'Label' , [
 
 labels = [
     #       name                     id    trainId   category            catId     hasInstances   ignoreInEval   color
-    Label(  'unlabeled'            ,  0 ,      11 , 'void'            , 0       , False        , True         , (  0,  0,  0) ),
+    Label('unlabeled'            ,  0 ,      11 , 'void'            , 0       , False        , True         , (  0,  0,  0) ),
     Label(  'ego vehicle'          ,  1 ,      11 , 'void'            , 0       , False        , True         , (  0,  0,  0) ),
     Label(  'rectification border' ,  2 ,      11 , 'void'            , 0       , False        , True         , (  0,  0,  0) ),
     Label(  'out of roi'           ,  3 ,      11 , 'void'            , 0       , False        , True         , (  0,  0,  0) ),
     Label(  'static'               ,  4 ,      11 , 'void'            , 0       , False        , True         , (  0,  0,  0) ),
     Label(  'dynamic'              ,  5 ,      11 , 'void'            , 0       , False        , True         , (111, 74,  0) ),
-    Label(  'ground'               ,  6 ,      11 , 'void'            , 0       , False        , True         , ( 81,  0, 81) ),
+    Label(  'ground'               ,  6 ,      3 , 'void'            , 0       , False        , True         , ( 81,  0, 81) ),
     Label(  'road'                 ,  7 ,        3 , 'flat'            , 1       , False        , False        , (128, 64,128) ),
     Label(  'sidewalk'             ,  8 ,        4 , 'flat'            , 1       , False        , False        , (244, 35,232) ),
     Label(  'parking'              ,  9 ,      11 , 'flat'            , 1       , False        , True         , (250,170,160) ),
@@ -78,7 +78,7 @@ labels = [
     Label(  'bridge'               , 15 ,      11 , 'construction'    , 2       , False        , True         , (150,100,100) ),
     Label(  'tunnel'               , 16 ,      11 , 'construction'    , 2       , False        , True         , (150,120, 90) ),
     Label(  'pole'                 , 17 ,        2 , 'object'          , 3       , False        , False        , (153,153,153) ),
-    Label(  'polegroup'            , 18 ,      11 , 'object'          , 3       , False        , True         , (153,153,153) ),
+    Label(  'polegroup'            , 18 ,      2 , 'object'          , 3       , False        , True         , (153,153,153) ),
     Label(  'traffic light'        , 19 ,        2 , 'object'          , 3       , False        , False        , (250,170, 30) ),
     Label(  'traffic sign'         , 20 ,        6 , 'object'          , 3       , False        , False        , (220,220,  0) ),
     Label(  'vegetation'           , 21 ,        5 , 'nature'          , 4       , False        , False        , (107,142, 35) ),
